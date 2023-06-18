@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -11,27 +11,28 @@ import {
   Touch,
   Alert,
   Button,
+  Platform,
+  StatusBar,
+  
 } from "react-native";
 
 export default function App() {
   console.log(require("./assets/icon.png"));
   return (
-    <SafeAreaView style={[styles.container, containerStyle]}>
-      <Button 
-      color="blue"
-      title="Click ME" 
-      onPress={() => Alert.prompt('My Mitle', 'My message', text => console.log(text))} />
+    <SafeAreaView style={[styles.container]}>
+      <Button
+        title="Click ME"
+        onPress={() => console.log("Button Tapped")}
+      />
     </SafeAreaView>
   );
 }
-
-const containerStyle = { backgroundColor: "orange" };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  
   },
 });

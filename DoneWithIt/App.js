@@ -27,14 +27,20 @@ export default function App() {
         flexDirection: "row", // row, column, row-reverse, column-reverse
         justifyContent: "center", // flex-start, flex-end, center, space-around, space-between, space-evenly
         alignItems: "center", // flex-start, flex-end, center, stretch, baseline
+        alignContent: "center", // flex-start, flex-end, center, stretch, space-around, space-between
+        flexWrap: "wrap",
       }}
     >
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: 100,
+          //flexBasis: 100, //map to width or height depending on main axis
+          //flexGrow: 1, // 0, 1 //it is like flex: 1
+          // width: 100,
+          //flexShrink: 1, // 0, 1 //it is like flex: 1
           height: 100,
-          alignSelf: "flex-start",
+          width: 100,
+         
         }}
       />
       <View
@@ -42,11 +48,29 @@ export default function App() {
           backgroundColor: "gold",
           width: 100,
           height: 100,
+          // right: 20,
+          // top: 20,
+          //position: "relative",
+          //position: "absolute",
         }}
       />
       <View
         style={{
           backgroundColor: "tomato",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "grey",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "greenyellow",
           width: 100,
           height: 100,
         }}

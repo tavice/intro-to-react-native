@@ -24,24 +24,31 @@ export default function App() {
       style={{
         backgroundColor: "#fff",
         flex: 1,
+        flexDirection: "row", // row, column, row-reverse, column-reverse
+        justifyContent: "center", // flex-start, flex-end, center, space-around, space-between, space-evenly
+        alignItems: "center", // flex-start, flex-end, center, stretch, baseline
       }}
     >
       <View
         style={{
           backgroundColor: "dodgerblue",
-          flex: 2,
+          width: 100,
+          height: 100,
+          alignSelf: "flex-start",
         }}
       />
       <View
         style={{
           backgroundColor: "gold",
-          flex: 1,
+          width: 100,
+          height: 100,
         }}
       />
       <View
         style={{
           backgroundColor: "tomato",
-          flex: 1,
+          width: 100,
+          height: 100,
         }}
       />
     </View>

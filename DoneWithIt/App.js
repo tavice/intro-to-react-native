@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   Touch,
+  Alert,
   Button,
 } from "react-native";
 
@@ -19,7 +20,7 @@ export default function App() {
       <Button 
       color="orange"
       title="Click ME" 
-      onPress={() => console.log("button tapped")} />
+      onPress={() => Alert.prompt('My Mitle', 'My message', text => console.log(text))} />
     </SafeAreaView>
   );
 }

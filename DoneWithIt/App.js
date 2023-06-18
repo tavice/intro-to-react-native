@@ -16,14 +16,16 @@ import {
 export default function App() {
   console.log(require("./assets/icon.png"));
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, containerStyle]}>
       <Button 
-      color="orange"
+      color="blue"
       title="Click ME" 
       onPress={() => Alert.prompt('My Mitle', 'My message', text => console.log(text))} />
     </SafeAreaView>
   );
 }
+
+const containerStyle = { backgroundColor: "orange" };
 
 const styles = StyleSheet.create({
   container: {

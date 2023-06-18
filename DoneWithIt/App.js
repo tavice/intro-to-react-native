@@ -1,88 +1,59 @@
-import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  SafeAreaView,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableHighlight,
-  Touch,
-  Alert,
-  Button,
-  Platform,
-  StatusBar,
-  Dimensions,
-} from "react-native";
-import { useDimensions } from "@react-native-community/hooks";
-import { useDeviceOrientation } from "./components/useDeviceOrientation";
+import React from 'react';
+import { StyleSheet, View, Text, Image, Button, ImageBackground } from 'react-native';
 
-export default function App() {
+const WelcomeScreen = () => {
   return (
-    <View
-      style={{
-        backgroundColor: "#fff",
-        flex: 1,
-        flexDirection: "row", // row, column, row-reverse, column-reverse
-        justifyContent: "center", // flex-start, flex-end, center, space-around, space-between, space-evenly
-        alignItems: "center", // flex-start, flex-end, center, stretch, baseline
-        alignContent: "center", // flex-start, flex-end, center, stretch, space-around, space-between
-        flexWrap: "wrap",
-      }}
-    >
-      <View
-        style={{
-          backgroundColor: "dodgerblue",
-          //flexBasis: 100, //map to width or height depending on main axis
-          //flexGrow: 1, // 0, 1 //it is like flex: 1
-          // width: 100,
-          //flexShrink: 1, // 0, 1 //it is like flex: 1
-          height: 100,
-          width: 100,
-         
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "gold",
-          width: 100,
-          height: 100,
-          // right: 20,
-          // top: 20,
-          //position: "relative",
-          //position: "absolute",
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "tomato",
-          width: 100,
-          height: 100,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "grey",
-          width: 100,
-          height: 100,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "greenyellow",
-          width: 100,
-          height: 100,
-        }}
-      />
+    <View style={styles.container}>
+      <ImageBackground
+        style={styles.background}
+        source={require('./assets/background.jpg')} // replace this with your own image path
+      >
+        <View style={styles.logoContainer}>
+          <Image
+            style={styles.logo}
+            source={require('./assets/logo-red.png')} // replace this with your own image path
+          />
+          <Text style={styles.logoText}>Sell What You Don't Need</Text>
+        </View>
+
+        <View style={styles.buttonsContainer}>
+          <Button title="Login" color="#fc5c65" onPress={() => {}} />
+          <Button title="Register" color="#4ECDC4" onPress={() => {}} />
+        </View>
+      </ImageBackground>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+  logoContainer: {
+    position: 'absolute',
+    top: '20%',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 100,
+    height: 100,
+  },
+  logoText: {
+    marginTop: 10,
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  buttonsContainer: {
+    width: '100%',
+    height: 70,
+    padding: 0,
+    backgroundColor: 'transparent', // make sure the button container has no background
+  },
+  background: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
 });
+
+export default WelcomeScreen;
